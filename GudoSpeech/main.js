@@ -1,5 +1,6 @@
 const searchForm = document.querySelector("#search-form");
 const searchFormInput = searchForm.querySelector("input"); // <=> document.querySelector("#search-form input");
+const imageOutput = document.querySelector("#image-output");
 const info = document.querySelector(".info");
 
 // The speech recognition interface lives on the browser
@@ -49,21 +50,25 @@ if(SpeechRecognition) {
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
     
-    if(transcript.toLowerCase().trim()==="stop recording") {
+    if(transcript.toLowerCase().trim()==="stop recording.") {
       recognition.stop();
     }
     else if(!searchFormInput.value) {
       searchFormInput.value = transcript;
     }
     else {
-      if(transcript.toLowerCase().trim()==="go") {
+      if(transcript.toLowerCase().trim()==="go.") {
         searchForm.submit();
       }
-      else if(transcript.toLowerCase().trim()==="reset") {
+      else if(transcript.toLowerCase().trim()==="reset.") {
         searchFormInput.value = "";
       }
       else {
         searchFormInput.value = transcript;
+	var punctuationless = transcript.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+	imageOutput.src = "images/"+punctuationless+".png";
+	
+	console.log(imageOutput.src)
       }
     }
     // searchFormInput.value = transcript;
