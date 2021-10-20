@@ -1,0 +1,12 @@
+{
+    "manifest_version":2,
+    "name": "Gudo",
+    "description": "Visual Assistant",
+    "version": "1.0.0",
+    "icons": {},
+    "browser_action": {
+        "default_icon":"",
+        "default_popup": "index.html"
+    },
+    "permissions": ["activeTab"]
+}
