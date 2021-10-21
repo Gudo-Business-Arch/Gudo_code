@@ -12,6 +12,8 @@ body {
 }
 .container {
   padding: 30px 50px;
+  
+
 }
 #search-form {
   width: 30%;
@@ -55,15 +57,13 @@ body {
   .info { font-size: 0.5rem; }
 }
 
-a{
-  color: #DFFF00;
-  
-}
 
+/**GUDO LOGO***/
 h1{
   color: #DFFF00;
 }
 
+/**NAV BAR**/
 nav {
   background-color: black;
   height: 60px;
@@ -73,14 +73,26 @@ nav {
   border: solid 2px #DFFF00;
   box-shadow: 2px 2px 15px 1px rgb(36, 36, 36);
 }
-
 nav ul {
   width: 100%;
   text-align: center;
 }
-
 nav ul li {
   display: inline-block;
   margin: 0 5px;
   width: 15%;
+}
+/**navbar links**/
+a{
+  color: #DFFF00;
+}
+
+.image_container{
+  margin: auto;
+  padding: 5%;
+  border: solid #DFFF00;
+}
+
+footer{
+  border: solid #DFFF00;
 }
