@@ -3,7 +3,7 @@
     "name": "Gudo",
     "description": "Visual Assistant",
     "version": "1.0.0",
-    "icons": {},
+    "icons": {"128": ""},
     "browser_action": {
         "default_icon":"",
         "default_popup": "index.html"
