@@ -5,11 +5,14 @@ const info = document.querySelector(".info");
 
 // The speech recognition interface lives on the browser
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; // if none exists -> undefined
+const SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarList; // if none exists -> undefined
 
 if(SpeechRecognition) {
   console.log("Your Browser supports speech Recognition");
-  
   const recognition = new SpeechRecognition();
+  const speechRecognitionList = new SpeechGrammarList();
+  speechRecognitionList.addFromString("Bulbasaur");
+  recognition.grammars = speechRecognitionList;
   recognition.continuous = true;
   // recognition.lang = "en-US";
 
@@ -66,8 +69,8 @@ if(SpeechRecognition) {
       else {
         searchFormInput.value = transcript;
 	var punctuationless = transcript.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+	var punctuationless = punctuationless.replace(/^ +/, "");
 	imageOutput.src = "images/"+punctuationless+".png";
-	
 	console.log(imageOutput.src)
       }
     }
