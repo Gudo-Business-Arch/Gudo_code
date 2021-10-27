@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 * {
   margin: 0;
@@ -6,14 +6,14 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Montserrat', sans-serif;
+  margin: 100px;
+  font-family: "Montserrat", sans-serif;
   background-color: #000000;
   color: #fff;
 }
 .container {
   padding: 30px 50px;
-  
-
+  margin: 50px;
 }
 #search-form {
   width: 30%;
@@ -25,7 +25,7 @@ body {
   width: 100%;
   font-size: 1.5rem;
   padding: 10px 15px;
-  border: 2px solid #DFFF00;
+  border: 2px solid #dfff00;
   border-radius: 2px;
 }
 #search-form button {
@@ -49,28 +49,35 @@ body {
 }
 
 @media (max-width: 1200px) {
-  #search-form { width: 50%; }
+  #search-form {
+    width: 50%;
+  }
 }
 @media (max-width: 768px) {
-  .container { padding: 30px 35px; }
-  #search-form { width: 100%; }
-  .info { font-size: 0.5rem; }
+  .container {
+    padding: 30px 35px;
+  }
+  #search-form {
+    width: 100%;
+  }
+  .info {
+    font-size: 0.5rem;
+  }
 }
 
-
 /**GUDO LOGO***/
-h1{
-  color: #DFFF00;
+h1 {
+  color: #dfff00;
 }
 
 /**NAV BAR**/
 nav {
   background-color: black;
   height: 60px;
-  width: 100%;
+  width: 500px;
   padding: 10px;
   border-radius: 12px;
-  border: solid 2px #DFFF00;
+  border: solid 2px #dfff00;
   box-shadow: 2px 2px 15px 1px rgb(36, 36, 36);
 }
 nav ul {
@@ -83,16 +90,16 @@ nav ul li {
   width: 15%;
 }
 /**navbar links**/
-a{
-  color: #DFFF00;
+a {
+  color: #dfff00;
 }
 
-.image_container{
+.image_container {
   margin: auto;
   padding: 5%;
-  border: solid #DFFF00;
+  border: solid #dfff00;
 }
 
-footer{
-  border: solid #DFFF00;
+footer {
+  border: solid #dfff00;
 }

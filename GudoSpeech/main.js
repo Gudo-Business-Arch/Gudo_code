@@ -4,10 +4,12 @@ const imageOutput = document.querySelector("#image-output");
 const info = document.querySelector(".info");
 
 // The speech recognition interface lives on the browser
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; // if none exists -> undefined
-const SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarList; // if none exists -> undefined
+const SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition; // if none exists -> undefined
+const SpeechGrammarList =
+  window.SpeechGrammarList || window.webkitSpeechGrammarList; // if none exists -> undefined
 
-if(SpeechRecognition) {
+if (SpeechRecognition) {
   console.log("Your Browser supports speech Recognition");
   const recognition = new SpeechRecognition();
   const speechRecognitionList = new SpeechGrammarList();
@@ -16,7 +18,10 @@ if(SpeechRecognition) {
   recognition.continuous = true;
   // recognition.lang = "en-US";
 
-  searchForm.insertAdjacentHTML("beforeend", '<button type="button"><i class="mic_btn"></i></button>');
+  searchForm.insertAdjacentHTML(
+    "beforeend",
+    '<button type="button"><i class="mic_btn"></i></button>'
+  );
   searchFormInput.style.paddingRight = "50px";
 
   const micBtn = searchForm.querySelector("button");
@@ -24,10 +29,10 @@ if(SpeechRecognition) {
 
   micBtn.addEventListener("click", micBtnClick);
   function micBtnClick() {
-    if(micIcon.classList.contains("mic_btn")) { // Start Voice Recognition
+    if (micIcon.classList.contains("mic_btn")) {
+      // Start Voice Recognition
       recognition.start(); // First time you have to allow access to mic!
-    }
-    else {
+    } else {
       recognition.stop();
     }
   }
@@ -52,26 +57,25 @@ if(SpeechRecognition) {
   function resultOfSpeechRecognition(event) {
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
-    
-    if(transcript.toLowerCase().trim()==="stop recording.") {
+
+    if (transcript.toLowerCase().trim() === "stop recording.") {
       recognition.stop();
-    }
-    else if(!searchFormInput.value) {
+    } else if (!searchFormInput.value) {
       searchFormInput.value = transcript;
-    }
-    else {
-      if(transcript.toLowerCase().trim()==="go.") {
+    } else {
+      if (transcript.toLowerCase().trim() === "go.") {
         searchForm.submit();
-      }
-      else if(transcript.toLowerCase().trim()==="reset.") {
+      } else if (transcript.toLowerCase().trim() === "reset.") {
         searchFormInput.value = "";
-      }
-      else {
+      } else {
         searchFormInput.value = transcript;
-	var punctuationless = transcript.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
-	var punctuationless = punctuationless.replace(/^ +/, "");
-	imageOutput.src = "images/"+punctuationless+".png";
-	console.log(imageOutput.src)
+        var punctuationless = transcript.replace(
+          /[.,\/#!$%\^&\*;:{}=\-_`~()]/g,
+          ""
+        );
+        var punctuationless = punctuationless.replace(/^ +/, "");
+        imageOutput.src = "images/" + punctuationless + ".png";
+        console.log(imageOutput.src);
       }
     }
     // searchFormInput.value = transcript;
@@ -80,12 +84,9 @@ if(SpeechRecognition) {
     //   searchForm.submit();
     // }, 500);
   }
-  
-  info.textContent = 'Tell Gudo to: "stop recording", "reset", "go"';
-  
-}
 
-else {
+  info.textContent = 'Tell Gudo to: "stop recording", "reset", "go"';
+} else {
   console.log("Your Browser does not support speech Recognition");
   info.textContent = "Your Browser does not support Speech Recognition";
 }
