@@ -1,6 +1,6 @@
 # GUDO
 
-Simple overview of use/purpose.
+Pronounced "gudəʊ", or "goo-dough" if you cannot read IPA.
 
 ## Description
 
