@@ -17,37 +17,37 @@ input.addEventListener("input", (e) => {
 
 //in order to fetch the data from the API function
 //CURATED PHOTOS****************************************************************
-async function CuratedPhotos(pagenum) {
-  const data = await fetch(
-    //changing the "1" in the line below decides the number of images returned"
-    "https://api.pexels.com/v1/curated?per_page=15&page=${pagenum}",
-    {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        Authorization: auth,
-      },
-    }
-  );
-  const result = await data.json();
-  result.photos.forEach((photo) => {
-    const pic = document.createElement("div");
-    pic.innerHTML = `<img src=${photo.src.large}>
-      
-      <p>Photo : ${photo.photographer}</p>
-      <a href=${photo.src.large}>Download</a>
+// async function CuratedPhotos(pagenum) {
+//   const data = await fetch(
+//     //changing the "1" in the line below decides the number of images returned"
+//     "https://api.pexels.com/v1/curated?per_page=15&page=${pagenum}",
+//     {
+//       method: "GET",
+//       headers: {
+//         Accept: "application/json",
+//         Authorization: auth,
+//       },
+//     }
+//   );
+//   const result = await data.json();
+//   result.photos.forEach((photo) => {
+//     const pic = document.createElement("div");
+//     pic.innerHTML = `<img src=${photo.src.large}>
 
-      `;
+//       <p>Photo : ${photo.photographer}</p>
+//       <a href=${photo.src.large}>Download</a>
 
-    document.querySelector(".gallery").appendChild(pic);
-  });
-}
+//       `;
+
+//     document.querySelector(".gallery").appendChild(pic);
+//   });
+// }
 
 //SEARCH QUERY****************************************************************
 async function SearchPhotos(query, pagenum) {
   const data = await fetch(
     //changing the "1" in the line below decides the number of images returned"
-    `https://api.pexels.com/v1/search?query=${query}&per_page=15&page=${pagenum}`,
+    `https://api.pexels.com/v1/search?query=${query}&per_page=1&page=${pagenum}`,
     {
       method: "GET",
       headers: {
