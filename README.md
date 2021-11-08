@@ -6,7 +6,19 @@ Pronounced "gudəʊ", or "goo-dough" if you cannot read IPA.
 
 Gudo, The Visual Assistant.
 
-## Getting Started
+## Getting Started TO DO LIST
+
+* Word Weight List interaction needs to be implemented.
+	[[word[image_id,weight]..]..]
+* Image list interaction needs to be implemented.
+	[[image_id,image_text,image_filename,image_link]..]
+* Image Weights need to be assigned (image weight list is prereq)
+
+* image_id_score = 1
+for each word
+	for each image_id
+		image_id_score = image_id_score*weight
+
 
 ### Dependencies
 
