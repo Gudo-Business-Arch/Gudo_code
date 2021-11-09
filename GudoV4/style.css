@@ -152,10 +152,10 @@ input {
 
 .gallery {
   width: 90%;
-  margin: 15vh 50%;
+  margin: 15px 50%;
   transform: translateX(-50%);
   display: grid;
-  grid-template-columns: repeat(5, 200px);
+  grid-template-columns: repeat(1, 200px);
   /* border: solid 2px black; */
   row-gap: 20px;
   column-gap: 20px;
