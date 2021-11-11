@@ -132,12 +132,23 @@ input {
 .search_button {
   padding: 0.5rem 3rem;
   margin-left: 10px;
-  background: yellow;
+  background: #dfff00;
   color: black;
   cursor: pointer;
   font-size: 1.2rem;
   text-align: center;
 }
+
+.talk_btn {
+  padding: 0.5rem 0.5rem;
+  margin-left: 10px;
+  background: #dfff00;
+  color: black;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 
 .next {
   position: fixed;
