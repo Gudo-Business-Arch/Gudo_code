@@ -118,7 +118,7 @@ footer {
   min-height: 10vh;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid chartreuse;
+  border-bottom: 1px solid #dfff00;
   z-index: 1;
   background: black;
 }
