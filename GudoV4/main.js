@@ -25,10 +25,13 @@ recognition.onresult = function(event) {
     //the actual text
     const transcript = event.results[current][0].transcript;
     //accessing the content (h3)
-    content.value = transcript;
+    input.value = transcript;
 	query = transcript;
 	// ^^^ THIS FIXES THE BUG: THE OTHER PLACE WHERE IT WOULD DEFINE QUERY RELYS ON THE USER CHANGING THE INPUT FOR THE TEXTBOX VIA TYPING on line 49
     console.log(transcript);
+	search = true;
+	clear()
+	SearchPhotos(query, pagenum);
 };
 
 btn.addEventListener('click', () => {
@@ -114,19 +117,30 @@ search_button.addEventListener("click", () => {
   SearchPhotos(query, pagenum);
   pagenum++;
 });
+
+document.querySelector('input').addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    if (input.value === "") return;
+    clear();
+    search = true;
+    SearchPhotos(query, pagenum);
+    pagenum++;
+  }
+});
 //clears the previous results in gallery
 function clear() {
-  input.value = "";
   document.querySelector(".gallery").innerHTML = "";
 }
 
 next.addEventListener("click", () => {
   //if false and we dont have any input and you hit the next button then the page will load the next images, if true there is a value in the search input and it will return the desired input
   if (!search) {
+	clear()
     pagenum++;
     CuratedPhotos(pagenum);
   } else {
     if (query.value === "") return;
+	clear()
     pagenum++;
     SearchPhotos(query, pagenum);
   }
