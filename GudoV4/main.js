@@ -26,6 +26,8 @@ recognition.onresult = function(event) {
     const transcript = event.results[current][0].transcript;
     //accessing the content (h3)
     content.value = transcript;
+	query = transcript;
+	// ^^^ THIS FIXES THE BUG: THE OTHER PLACE WHERE IT WOULD DEFINE QUERY RELYS ON THE USER CHANGING THE INPUT FOR THE TEXTBOX VIA TYPING on line 49
     console.log(transcript);
 };
 
