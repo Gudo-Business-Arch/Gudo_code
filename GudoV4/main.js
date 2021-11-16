@@ -108,6 +108,9 @@ async function SearchPhotos(query, pagenum) {
 
     document.querySelector(".gallery").appendChild(pic);
   });
+  if (result.photos.length < 1) {
+	  loadImgUnsplashed()
+  }
 }
 
 search_button.addEventListener("click", () => {
@@ -146,3 +149,56 @@ next.addEventListener("click", () => {
   }
 });
 CuratedPhotos(pagenum);
+
+function loadImgUnsplashed() {
+  clear();
+
+  const urlUnsplashed =
+    "https://api.unsplash.com/search/photos/?query=" +
+    input.value +
+    "&per_page=1&client_id=YeGuXHx1Qvm9MhEQ8A8YTSp89UX-N5nus9awY5NdrfA";
+
+  fetch(urlUnsplashed)
+    .then((response) => {
+      if (response.ok) return response.json();
+      else alert(response.status);
+    })
+    .then((data) => {
+      const pic = document.createElement("div");
+	  for (let i = 0; i < data.results.length; i++) {
+        pic.innerHTML = `<img src=${data.results[i].urls.raw}>
+		<p>Photo : Unsplashed</p>
+		<a href=${data.results[i].urls.raw}>Download</a>
+		`;
+        document.querySelector(".gallery").appendChild(pic);
+	  }
+      })
+    };
+
+//async function SearchPhotos(query, pagenum) {
+//  const data = await fetch(
+//    //changing the "1" in the line below decides the number of images returned"
+//    `https://api.pexels.com/v1/search?query=${query}&per_page=1&page=${pagenum}`,
+//    {
+//      method: "GET",
+//      headers: {
+//        Accept: "application/json",
+//        Authorization: auth,
+//      },
+//    }
+//  );
+//  const result = await data.json();
+//  result.photos.forEach((photo) => {
+//    const pic = document.createElement("div");
+//    pic.innerHTML = `<img src=${photo.src.large}>
+//      
+//      <p>Photo : ${photo.photographer}</p>;
+//      <a href=${photo.src.large}>Download</a>
+//
+//      `;
+//    document.querySelector(".gallery").appendChild(pic);
+//  });
+//  if (result.photos.length < 1) {
+//	  loadImgUnsplashed()
+//  }
+//}
