@@ -30,7 +30,6 @@ recognition.onresult = function(event) {
 	// ^^^ THIS FIXES THE BUG: THE OTHER PLACE WHERE IT WOULD DEFINE QUERY RELYS ON THE USER CHANGING THE INPUT FOR THE TEXTBOX VIA TYPING on line 49
     console.log(transcript);
 	search = true;
-	clear()
 	SearchPhotos(query, pagenum);
 };
 
@@ -76,7 +75,7 @@ async function CuratedPhotos(pagenum) {
       
       <p>Photo : ${photo.photographer}</p>
       <a href=${photo.src.large}>Download</a>
-
+	  <button onclick="removeImage(this)">Remove</button>
       `;
 
     document.querySelector(".gallery").appendChild(pic);
@@ -101,9 +100,9 @@ async function SearchPhotos(query, pagenum) {
     const pic = document.createElement("div");
     pic.innerHTML = `<img src=${photo.src.large}>
       
-      <p>Photo : ${photo.photographer}</p>;
+      <p>Photo : ${photo.photographer}</p>
       <a href=${photo.src.large}>Download</a>
-
+	  <button onclick="removeImage(this)">Remove</button>
       `;
 
     document.querySelector(".gallery").appendChild(pic);
@@ -115,7 +114,6 @@ async function SearchPhotos(query, pagenum) {
 
 search_button.addEventListener("click", () => {
   if (input.value === "") return;
-  clear();
   search = true;
   SearchPhotos(query, pagenum);
   pagenum++;
@@ -124,26 +122,23 @@ search_button.addEventListener("click", () => {
 document.querySelector('input').addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
     if (input.value === "") return;
-    clear();
     search = true;
     SearchPhotos(query, pagenum);
     pagenum++;
   }
 });
-//clears the previous results in gallery
-function clear() {
-  document.querySelector(".gallery").innerHTML = "";
-}
+//clears the previous results in gallery [CURRENTLY DEPRECATED, see removeImage()]
+//function clear() {
+//  document.querySelector(".gallery").innerHTML = "";
+//}
 
 next.addEventListener("click", () => {
   //if false and we dont have any input and you hit the next button then the page will load the next images, if true there is a value in the search input and it will return the desired input
   if (!search) {
-	clear()
     pagenum++;
     CuratedPhotos(pagenum);
   } else {
     if (query.value === "") return;
-	clear()
     pagenum++;
     SearchPhotos(query, pagenum);
   }
@@ -151,7 +146,6 @@ next.addEventListener("click", () => {
 CuratedPhotos(pagenum);
 
 function loadImgUnsplashed() {
-  clear();
 
   const urlUnsplashed =
     "https://api.unsplash.com/search/photos/?query=" +
@@ -169,36 +163,13 @@ function loadImgUnsplashed() {
         pic.innerHTML = `<img src=${data.results[i].urls.raw}>
 		<p>Photo : Unsplashed</p>
 		<a href=${data.results[i].urls.raw}>Download</a>
+		<button onclick="removeImage(this)">Remove</button>
 		`;
         document.querySelector(".gallery").appendChild(pic);
 	  }
       })
     };
 
-//async function SearchPhotos(query, pagenum) {
-//  const data = await fetch(
-//    //changing the "1" in the line below decides the number of images returned"
-//    `https://api.pexels.com/v1/search?query=${query}&per_page=1&page=${pagenum}`,
-//    {
-//      method: "GET",
-//      headers: {
-//        Accept: "application/json",
-//        Authorization: auth,
-//      },
-//    }
-//  );
-//  const result = await data.json();
-//  result.photos.forEach((photo) => {
-//    const pic = document.createElement("div");
-//    pic.innerHTML = `<img src=${photo.src.large}>
-//      
-//      <p>Photo : ${photo.photographer}</p>;
-//      <a href=${photo.src.large}>Download</a>
-//
-//      `;
-//    document.querySelector(".gallery").appendChild(pic);
-//  });
-//  if (result.photos.length < 1) {
-//	  loadImgUnsplashed()
-//  }
-//}
+function removeImage(elem) {
+  elem.parentNode.remove();
+}

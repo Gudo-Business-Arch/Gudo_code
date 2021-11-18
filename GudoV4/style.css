@@ -165,9 +165,9 @@ input {
   width: 90%;
   margin: 15px 50%;
   transform: translateX(-50%);
-  display: grid;
-  grid-template-columns: repeat(1, 200px);
-  /* border: solid 2px black; */
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
   row-gap: 20px;
   column-gap: 20px;
   justify-content: center;
