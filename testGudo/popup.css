@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+/* vvvvvv CSS GRID CUSTOMIZATION vvvvv */
+.grid_container {
+  display: grid;
+  grid-template-columns: 0.2fr 1.2fr 0.5fr;
+  grid-template-rows: 0.2fr 4fr 0.5fr 1.5fr;
+
+  grid-template-areas:
+    "header      header         header"
+    "side_bar    main           library"
+    "side_bar    description    library"
+    "footer      footer         footer";
+
+  height: 100vh;
+  margin: 2em;
+}
+
+main {
+  /* HOW TO USE GRID AREA */
+  /* row start / column start / row end / column end */
+
+  grid-area: main;
+  background: #f5b301;
+}
+
+section.description {
+  grid-area: description;
+  background: #3b3f46;
+}
+
+section.side_bar {
+  grid-area: side_bar;
+  background: #f5b301;
+  border-radius: 10px;
+}
+
+section.footer {
+  grid-area: footer;
+  background: #3b3f46;
+  border-radius: 10px;
+}
+
+header {
+  grid-area: header;
+  background: #3b3f46;
+  border-radius: 10px;
+}
+
+.library {
+  grid-area: library;
+  background: #f5b301;
+  border-radius: 10px;
+}
+
+/* END OF GRID */
+
+.info {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
+.search {
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  min-height: 8vh;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #f5b301;
+  z-index: 1;
+  background: #3b3f46;
+}
+
+input {
+  padding: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.search_button {
+  padding: 0.5rem 3rem;
+  margin-left: 10px;
+  background: #f5b301;
+  color: #3b3f46;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.talk_btn {
+  padding: 0.5rem 0.5rem;
+  margin-left: 10px;
+  background: #f5b301;
+  color: #3b3f46;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 10px;
+}
+/* MICROPHONE ANIMATION  */
