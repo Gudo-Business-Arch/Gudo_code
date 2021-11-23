@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="180" height="128" viewBox="0 0 180 128" xml:space="preserve">
+<desc>Created with Fabric.js 4.6.0</desc>
+<rect x="0" y="0" width="180" height="128" style="stroke-width: 0; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"/>
+<circle cx="36" cy="88" r="32" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="4" y="56" width="64" height="32" style="stroke-width: 0; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"/>
+<circle cx="36" cy="36" r="32" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<circle cx="88" cy="44" r="16" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<circle cx="124" cy="44" r="16" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<circle cx="160" cy="44" r="16" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="72" y="28" width="32" height="16" style="stroke-width: 0; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="124" y="28" width="16" height="32" style="stroke-width: 0; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="36" y="4" width="32" height="64" style="stroke-width: 0; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"/>
+<circle cx="36" cy="36" r="16" style="stroke-width: 0; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"/>
+<circle cx="36" cy="88" r="16" style="stroke-width: 0; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"/>
+<circle cx="88" cy="44" r="8" style="stroke-width: 0; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"/>
+<circle cx="124" cy="44" r="8" style="stroke-width: 0; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"/>
+<circle cx="160" cy="44" r="8" style="stroke-width: 0; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="52" y="4" width="16" height="84" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="36" y="4" width="32" height="16" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="36" y="52" width="8" height="16" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="72" y="28" width="8" height="16" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="96" y="28" width="8" height="16" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="124" y="52" width="16" height="8" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="4" y="80" width="16" height="8" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="124" y="28" width="4" height="8" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+<rect x="132" y="4" width="8" height="56" style="stroke-width: 0; fill: rgb(191,255,0); fill-rule: nonzero; opacity: 1;"/>
+</svg>
