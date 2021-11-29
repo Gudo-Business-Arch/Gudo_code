@@ -4,6 +4,7 @@ const imageOutput = document.querySelector("#image-output");
 const info = document.querySelector(".info");
 const btn = document.querySelector('.talk_btn');
 const content = document.querySelector('input');
+const library = document.querySelector('.library_gallery');
 
 // The speech recognition interface lives on the browser
 const SpeechRecognition =
@@ -74,7 +75,7 @@ async function CuratedPhotos(pagenum) {
     pic.innerHTML = `<img src=${photo.src.large}>
       
       <p>Photo : ${photo.photographer}</p>
-      <a href=${photo.src.large}>Download</a>
+      <button onclick="moveImage(this)">Move to Library</button>
 	  <button onclick="removeImage(this)">Remove</button>
       `;
 
@@ -101,7 +102,7 @@ async function SearchPhotos(query, pagenum) {
     pic.innerHTML = `<img src=${photo.src.large}>
       
       <p>Photo : ${photo.photographer}</p>
-      <a href=${photo.src.large}>Download</a>
+      <button onclick="moveImage(this)">Move to Library</button>
 	  <button onclick="removeImage(this)">Remove</button>
       `;
 
@@ -162,7 +163,7 @@ function loadImgUnsplashed() {
 	  for (let i = 0; i < data.results.length; i++) {
         pic.innerHTML = `<img src=${data.results[i].urls.raw}>
 		<p>Photo : Unsplashed</p>
-		<a href=${data.results[i].urls.raw}>Download</a>
+		<button onclick="moveImage(this)">Move to Library</button>
 		<button onclick="removeImage(this)">Remove</button>
 		`;
         document.querySelector(".gallery").appendChild(pic);
@@ -172,4 +173,10 @@ function loadImgUnsplashed() {
 
 function removeImage(elem) {
   elem.parentNode.remove();
+}
+
+function moveImage(elem) {
+  var source = elem.parentNode;
+  library.appendChild(source);
+  elem.remove()
 }

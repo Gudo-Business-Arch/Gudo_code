@@ -79,6 +79,12 @@ header {
  /*   border-radius: 10px; */
 }
 
+button {
+	border-radius: 8px;
+	color: black;
+    background-color: #bfff00;
+}
+
 /* END OF GRID */
 
 .info {
@@ -145,6 +151,29 @@ input {
   margin-left: 5px;
   height: 300px;
   width: 200px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+
+.library_gallery {
+  width: 90%;
+  margin: 15px 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+  row-gap: 20px;
+  column-gap: 20px;
+  justify-content: center;
+  background-color: black;
+  font-size: 0.5rem;
+}
+
+.library_gallery img {
+  margin-left: 5px;
+  height: 75px;
+  width: 50px;
   object-fit: cover;
   object-position: center;
   cursor: pointer;
