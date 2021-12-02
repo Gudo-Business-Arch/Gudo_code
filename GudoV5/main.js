@@ -31,7 +31,12 @@ recognition.onresult = function(event) {
 	// ^^^ THIS FIXES THE BUG: THE OTHER PLACE WHERE IT WOULD DEFINE QUERY RELYS ON THE USER CHANGING THE INPUT FOR THE TEXTBOX VIA TYPING on line 49
     console.log(transcript);
 	search = true;
-	SearchPhotos(query, pagenum);
+    doc = nlp(query)
+    console.log("PRINTING NOUNS")
+    console.log(doc.nouns().json())
+    nounlist = doc.nouns().out('array')
+    nounlist.forEach(element => console.log(element));
+    nounlist.forEach(query => SearchPhotos(query, pagenum));
 };
 
 btn.addEventListener('click', () => {
@@ -116,7 +121,13 @@ async function SearchPhotos(query, pagenum) {
 search_button.addEventListener("click", () => {
   if (input.value === "") return;
   search = true;
-  SearchPhotos(query, pagenum);
+  doc = nlp(query)
+  console.log("PRINTING NOUNS")
+  console.log(doc.nouns().json())
+  nounlist = doc.nouns().out('array')
+  nounlist.forEach(element => console.log(element));
+  nounlist.forEach(query => SearchPhotos(query, pagenum));
+  ;
   pagenum++;
 });
 
@@ -124,7 +135,12 @@ document.querySelector('input').addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
     if (input.value === "") return;
     search = true;
-    SearchPhotos(query, pagenum);
+    doc = nlp(query)
+    console.log("PRINTING NOUNS")
+    console.log(doc.nouns().json())
+    nounlist = doc.nouns().out('array')
+    nounlist.forEach(element => console.log(element));
+    nounlist.forEach(query => SearchPhotos(query, pagenum));
     pagenum++;
   }
 });
@@ -141,7 +157,12 @@ next.addEventListener("click", () => {
   } else {
     if (query.value === "") return;
     pagenum++;
-    SearchPhotos(query, pagenum);
+    doc = nlp(query)
+    console.log("PRINTING NOUNS")
+    console.log(doc.nouns().json())
+    nounlist = doc.nouns().out('array')
+    nounlist.forEach(element => console.log(element));
+    nounlist.forEach(query => SearchPhotos(query, pagenum));
   }
 });
 CuratedPhotos(pagenum);
