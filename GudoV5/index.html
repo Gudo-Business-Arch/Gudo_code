@@ -34,7 +34,6 @@
     </header>
 
     <!-- MAIN GRID -->
-
     <!-- FULLSCREEN JS -->
     <script>
         //For browser compatibility for MS, Mozilla, and Chrome
@@ -61,6 +60,7 @@
         document.addEventListener("fullscreenchange", ()=>{
             console.log("full screen changed!");
         });
+
     </script>
     <!-- END OF FULLSCREEN JS -->
 
@@ -73,21 +73,21 @@
 			<div class="gallery"></div>
 			<div class="next">Next page</div>
         </main>
+        <!-- END OF MAIN GRID -->
 
         <!-- SIDEBAR NAVIGATION -->
         <section class="side_bar">
             <div class="wrapper">
                 <div class="sidebar">
-                    <h2>SIDEBAR</h2>
+                    
                     <ul>
-                        <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-                        <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
-                        <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <br>
+                        <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                        <br>
+                        <li><a href="#"><i class="fas fa-address-card"></i> About</a></li>
+                        <br>
                         <li><a href="#"><i class="fa fa-book"></i> Saves</a></li>
-                        <!-- <li><a href="#"><i class="fas fa-project-diagram"></i>portfolio</a></li> -->
-                        <!-- <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li> -->
-                        <!-- <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li> -->
-                        <!-- <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li> -->
                     </ul> 
                 </div>
             </div>
@@ -100,7 +100,33 @@
 
         <!-- FOOTER -->
         <section class="footer">
-            footer
+            <div class="footer">
+                <div class="footer-content">
+                    <div class="footer-section about">
+                        <h2>Gudo inc.</h2>
+                        <p>Visual Assistant</p>
+                        <div class="contact">
+                            <span><i class="fas fa-envelope"> &nbsp; info@email.com</i></span>
+                        </div>
+                    </div>
+                    <div class="footer-section contact-form">
+                        <br>
+                        <h3>CONTACT US</h3>
+                        <br>
+                        <form action="layout_one.html" method="post">
+                             <input type="email" name="email" class="text-input contact-input" placeholder="Your Email address">
+
+                             <input name="message" class="text-input contact-input" placeholder="Your message"></input>
+
+                            <button type="submit" class="btn btn-big"></button>
+                        </form>
+                     </div>
+                </div>
+                    
+                <div class="footer-bottom">
+                            &copy; Gudo | Designed by GWG and Charles 
+                 </div>
+            </div>
         </section>
 
       

@@ -76,13 +76,13 @@ section.library {
 header {
   grid-area: header;
   background: #000000;
- /*   border-radius: 10px; */
+  /*   border-radius: 10px; */
 }
 
 button {
-	border-radius: 8px;
-	color: black;
-    background-color: #bfff00;
+  border-radius: 8px;
+  color: black;
+  background-color: #bfff00;
 }
 
 /* END OF GRID */
@@ -140,7 +140,7 @@ input {
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   row-gap: 20px;
   column-gap: 20px;
   justify-content: center;
@@ -162,7 +162,7 @@ input {
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   row-gap: 20px;
   column-gap: 20px;
   justify-content: center;
@@ -179,4 +179,25 @@ input {
   cursor: pointer;
 }
 
-/* MICROPHONE ANIMATION  */
+/* NAVBAR */
+
+.fa-book {
+  border: solid 2px red;
+  color: #ffff00;
+  font-size: 24px;
+}
+
+.fa-address-card {
+  color: #ffff00;
+  font-size: 24px;
+}
+
+.fa-user {
+  color: #ffff00;
+  font-size: 24px;
+}
+
+.fa-home {
+  color: #ffff00;
+  font-size: 24px;
+}
