@@ -100,7 +100,6 @@ button {
   min-height: 8vh;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #ffff00;
   z-index: 1;
   background: #000000;
 }
@@ -149,11 +148,24 @@ input {
 
 .gallery img {
   margin-left: 5px;
-  height: 300px;
-  width: 200px;
+  max-height: 300px;
+  max-width: 200px;
   object-fit: cover;
   object-position: center;
   cursor: pointer;
+}
+
+:fullscreen img{
+  max-height: 600px;
+  max-width: 400px;
+}
+
+:fullscreen p{
+	display: none;
+}
+
+:fullscreen button{
+	display: none;
 }
 
 .library_gallery {
@@ -182,22 +194,21 @@ input {
 /* NAVBAR */
 
 .fa-book {
-  border: solid 2px red;
-  color: #ffff00;
+  color: #bfff00;
   font-size: 24px;
 }
 
 .fa-address-card {
-  color: #ffff00;
+  color: #bfff00;
   font-size: 24px;
 }
 
 .fa-user {
-  color: #ffff00;
+  color: #bfff00;
   font-size: 24px;
 }
 
 .fa-home {
-  color: #ffff00;
+  color: #bfff00;
   font-size: 24px;
 }
