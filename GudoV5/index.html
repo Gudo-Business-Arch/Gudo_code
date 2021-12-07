@@ -34,12 +34,42 @@
     </header>
 
     <!-- MAIN GRID -->
+
+    <!-- FULLSCREEN JS -->
+    <script>
+        //For browser compatibility for MS, Mozilla, and Chrome
+        function getFullcreenElement(){
+            return document.fullscreenElement
+            || document.webkitFullscreenElement
+            || document.mozFullscreenElement
+            || document.msFullscreenElement;
+        }
+        //Function for toggling on and off fullScreen mode
+        function toggleFullscreen(){
+            if(getFullcreenElement()){
+                document.exitFullscreen();
+            }
+            else{
+                document.getElementById("image_box").requestFullscreen().catch(console.log);
+            }
+        }
+        //double click event listener for togglefullscreen
+        document.addEventListener("dblclick", ()=>{
+            toggleFullscreen();
+        });
+
+        document.addEventListener("fullscreenchange", ()=>{
+            console.log("full screen changed!");
+        });
+    </script>
+    <!-- END OF FULLSCREEN JS -->
+
     <div class="grid_container">
-        <main>  
+        <main id="image_box">  
             <div class="mic_container">
-                  <i class="fas fa-microphone-alt" id="listening_mic"> Microphone</i>
+                  <i class="fas fa-microphone-alt" id="listening_mic"> </i>
             </div>
-            This is where the searched images will be displayed
+            
 			<div class="gallery"></div>
 			<div class="next">Next page</div>
         </main>
