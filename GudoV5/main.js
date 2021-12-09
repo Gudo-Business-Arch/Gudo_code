@@ -17,6 +17,24 @@ recognition.onstart = function () {
 	console.log('Gudo is listening');	// If this doesn't pop up, there might be problems.
 }
 
+async function GetNounsSearch(query, pagenum) {
+
+    doc = nlp(query) // Copies Query to Naatural Language Processing.
+    console.log("PRINTING NOUNS")
+    console.log(doc.nouns().json())
+    nounlist = doc.nouns().out('array')	// Returns an array of each noun in the query. [TODO: Search Photos with the query itself if no nouns are found!]
+	if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement) { 
+	// Perhaps have this on all the time? Would give a reason to use the library.
+		console.log("WE FULLSCREEN");
+		console.log(nounlist.length);
+		if (nounlist.length > 0) { // Okay, so this here, prevents the voice recognition from erasing all images if nothing is said, or you give a phrase without a noun.
+		clearGallery();
+		};
+	};
+    nounlist.forEach(element => console.log(element));
+    nounlist.forEach(query => SearchPhotos(query, pagenum));
+}
+
 recognition.onresult = function(event) {
     //returns what was spoken 
     const current = event.resultIndex;
@@ -28,15 +46,15 @@ recognition.onresult = function(event) {
 	// ^^^ THIS FIXES THE BUG: THE OTHER PLACE WHERE IT WOULD DEFINE QUERY RELYS ON THE USER CHANGING THE INPUT FOR THE TEXTBOX VIA TYPING on line 49
     console.log(transcript);
 	search = true;
-    doc = nlp(query) // Copies Query to Naatural Language Processing.
-    console.log("PRINTING NOUNS")
-    console.log(doc.nouns().json())
-    nounlist = doc.nouns().out('array')	// Returns an array of each noun in the query. [TODO: Search Photos with the query itself if no nouns are found!]
-    nounlist.forEach(element => console.log(element));
-    nounlist.forEach(query => SearchPhotos(query, pagenum));
+	GetNounsSearch(query, pagenum);
 };
 
 btn.addEventListener('click', () => {
+	recognition.continuous = false; // Default to being off, to give people a chance to move images to the library, for example.
+	if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement) {
+	recognition.continuous = true;
+	console.log("Continuous recognition enabled.")
+	}
     recognition.start();
 });
 
@@ -118,12 +136,7 @@ async function SearchPhotos(query, pagenum) {
 search_button.addEventListener("click", () => { // Preforms Search when clicking search button.
   if (input.value === "") return;
   search = true;
-  doc = nlp(query)	// Copies Query to Naatural Language Processing.
-  console.log("PRINTING NOUNS")
-  console.log(doc.nouns().json())
-  nounlist = doc.nouns().out('array')	// Returns an array of each noun in the query. [TODO: Search Photos with the query itself if no nouns are found!]
-  nounlist.forEach(element => console.log(element));
-  nounlist.forEach(query => SearchPhotos(query, pagenum));
+  GetNounsSearch(query, pagenum);
   ;
   pagenum++;
 });
@@ -132,19 +145,14 @@ document.querySelector('input').addEventListener('keypress', function (e) {	// D
   if (e.key === 'Enter') {
     if (input.value === "") return;
     search = true;
-    doc = nlp(query)	// Copies Query to Naatural Language Processing.
-    console.log("PRINTING NOUNS")
-    console.log(doc.nouns().json())
-    nounlist = doc.nouns().out('array')	// Returns an array of each noun in the query. [TODO: Search Photos with the query itself if no nouns are found!]
-    nounlist.forEach(element => console.log(element));
-    nounlist.forEach(query => SearchPhotos(query, pagenum));
+	GetNounsSearch(query, pagenum);
     pagenum++;
   }
 });
-//clears the previous results in gallery [CURRENTLY DEPRECATED, see removeImage()]
-//function clear() {
-//  document.querySelector(".gallery").innerHTML = "";
-//}
+//clears the previous results in gallery, only used in fullscreen.
+function clearGallery() {
+  document.querySelector(".gallery").innerHTML = "";
+}
 
 next.addEventListener("click", () => { // Preforms Next Page Search when clicking next button.
   //if false and we dont have any input and you hit the next button then the page will load the next images, if true there is a value in the search input and it will return the desired input
@@ -155,12 +163,7 @@ next.addEventListener("click", () => { // Preforms Next Page Search when clickin
     if (query.value === "") return;
     pagenum++;
 	// hey, shouldn't we stick this chunk into its own function, to minimize repetitive code? ...Yeah, we totally should, shouldn't we.
-    doc = nlp(query)	// Copies Query to Naatural Language Processing.
-    console.log("PRINTING NOUNS")
-    console.log(doc.nouns().json())
-    nounlist = doc.nouns().out('array') // Returns an array of each noun in the query. [TODO: Search Photos with the query itself if no nouns are found!]
-    nounlist.forEach(element => console.log(element));
-    nounlist.forEach(query => SearchPhotos(query, pagenum));
+	GetNounsSearch(query, pagenum);
   }
 });
 CuratedPhotos(pagenum); // ...Does this ever get called? I don't know.
