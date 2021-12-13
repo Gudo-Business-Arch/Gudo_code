@@ -8,57 +8,14 @@ Gudo, The Visual Assistant.
 
 ## Getting Started TO DO LIST
 
-* Word Weight List interaction needs to be implemented.
-	[[word[image_id,weight]..]..]
-* Image list interaction needs to be implemented.
-	[[image_id,image_text,image_filename,image_link]..]
-* Image Weights need to be assigned (image weight list is prereq)
-
-* image_id_score = 1
-for each word
-	for each image_id
-		image_id_score = image_id_score*weight
-
-
-### Dependencies
-
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10, Google Chrome
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
 
 ### Executing program
 
 * How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
 
 ## Help
 
 Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
 
 ## License
 
