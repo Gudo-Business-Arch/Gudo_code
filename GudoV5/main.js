@@ -5,6 +5,7 @@ const info = document.querySelector(".info");
 const btn = document.querySelector('.talk_btn');
 const content = document.querySelector('input');
 const library = document.querySelector('.library_gallery');
+recognizing = false
 
 // The speech recognition interface lives on the browser
 const SpeechRecognition =
@@ -15,10 +16,10 @@ const recognition = new SpeechRecognition();
 
 recognition.onstart = function () {
 	console.log('Gudo is listening');	// If this doesn't pop up, there might be problems.
+	recognizing = true;
 }
 
 async function GetNounsSearch(query, pagenum) {
-
     doc = nlp(query) // Copies Query to Naatural Language Processing.
     console.log("PRINTING NOUNS")
     console.log(doc.nouns().json())
@@ -47,16 +48,23 @@ recognition.onresult = function(event) {
     console.log(transcript);
 	search = true;
 	GetNounsSearch(query, pagenum);
+	if (recognition.continuous == false) {
+		recognizing = false
+	}
 };
 
 btn.addEventListener('click', () => {
+	if (recognizing == true) {
+		recognition.stop();
+		recognizing = false;
+	} else {
 	recognition.continuous = false; // Default to being off, to give people a chance to move images to the library, for example.
 	if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement) {
 	recognition.continuous = true;
 	console.log("Continuous recognition enabled.")
 	}
     recognition.start();
-});
+	}});
 
 const auth = "563492ad6f917000010000018ac681b5e4fb48af88579beaad86c24e";	// Pexels API Key
 const next = document.querySelector(".next");
