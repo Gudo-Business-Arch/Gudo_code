@@ -76,6 +76,7 @@ section.footer {
 section.library {
   grid-area: library;
   color: white;
+  overflow: auto;
 }
 
 header {
