@@ -23,6 +23,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="popup.css">
+    
 </head>
 
 <body>
@@ -99,7 +100,7 @@
                         <li><a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal"><i class="fas fa-user"></i>  Login </a></li>
                         <br>
                         <!-- Trigger the Login modal -->
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#signupModal"><i class="fas fa-user"></i>  Sign Up </a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#signupModal"><i class="fas fa-user-plus"></i>  Sign Up </a></li>
                         <br>
                         <li><a href="gudo_website/home.html"><i class="fas fa-question-circle"></i>  Need Help?</a></li>
                         <br>
@@ -285,27 +286,26 @@
                 <div class="footer-content">
                     <div class="footer-section about">
                         <h2>Gudo inc.</h2>
-                        <p>Visual Assistant</p>
+                        <p>The Visual Assistant</p>
                         <div class="contact">
-                            <span><i class="fas fa-envelope"> &nbsp; info@email.com</i></span>
+                            <h3>Contact Us</h3>
+                            <span><i class="fas fa-envelope"> &nbsp; gudoteam@gudoassistant.com</i></span>
                         </div>
                     </div>
                     <div class="footer-section contact-form">
                         <br>
-                        <h3>Contact Us</h3>
-                        <br>
-                        <form action="layout_one.html" method="post">
+                        <!-- form for message submissions (DOESNT WORK) -->
+                        <!-- <form action="layout_one.html" method="post">
                              <input type="email" name="email" class="text-input contact-input" placeholder="Your Email address">
 
                              <input name="message" class="text-input contact-input" placeholder="Your message"></input>
 
                             <button type="submit" class="btn btn-big"></button>
-                        </form>
+                        </form> -->
                      </div>
                 </div>
                     
                 <div class="footer-bottom">
-                    <br>
                             &copy; Gudo | Designed by GWG and Charles 
                  </div>
             </div>

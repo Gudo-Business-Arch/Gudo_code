@@ -199,7 +199,7 @@ header {
 }
 
 .body_container {
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #f0ffff;
   height: fit-content;
   border: solid 2px #bfff00;
@@ -409,7 +409,7 @@ body.dark .body_container {
     display: none;
   }
   .body_container {
-    border-radius: 40px;
+    border-radius: 10px;
   }
 
   .label {

@@ -29,16 +29,16 @@ main {
   /* row start / column start / row end / column end */
   position: relative;
   grid-area: main;
-  background: #ff0000;
-  color: #ffffff;
+  background: black;
+  color: #bfff00;
   border-radius: 10px;
   outline-style: solid;
-  outline-color: #ffffff;
+  outline-color: #bfff00;
   padding: 10px;
 }
 
 section {
-  background: red;
+  background: black;
   border-radius: 10px;
   outline-style: solid;
   outline-color: #bfff00;
@@ -64,14 +64,18 @@ section.description {
 
 section.side_bar {
   grid-area: side_bar;
+  padding-right: 30px;
+  padding-top: 80px;
 }
 
 section.footer {
   grid-area: footer;
+  color: white;
 }
 
 section.library {
   grid-area: library;
+  color: white;
 }
 
 header {
@@ -192,7 +196,7 @@ input {
   cursor: pointer;
 }
 
-/* NAVBAR */
+/* NAVBAR ICONS */
 
 .fa-book {
   color: #bfff00;
@@ -209,7 +213,16 @@ input {
   font-size: 24px;
 }
 
+.fa-user-plus {
+  color: #bfff00;
+  font-size: 24px;
+}
+
 .fa-home {
   color: #bfff00;
   font-size: 24px;
+}
+
+li {
+  color: #000000;
 }
