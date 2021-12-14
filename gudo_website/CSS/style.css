@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #bfff00;
+  font-size: 45px;
+}
+/*This Font will render in each article headline*/
+h2 {
+  color: black;
+  padding-bottom: 0px;
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  width: fit-content;
+}
+
+/*This Font will render for the "Featured Story"*/
+h3 {
+  color: #bfff00;
+}
+
+h4 {
+  color: #bfff00;
+}
+
+/*This Font will render in the body*/
+body {
+  background-color: rgb(71, 71, 71);
+  font-family: "Oswald", sans-serif;
+  margin: 7em;
+}
+
+hr {
+  border: solid 1px #bfff00;
+}
+
+/*Images*/
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.article_image {
+  box-shadow: 2px 6px 10px 1px #000;
+}
+
+/*image of the guy speaking*/
+.home_speaker_guy {
+  box-shadow: 2px 6px 10px 1px #000;
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+.home_girl_on_bed {
+  box-shadow: 2px 6px 10px 1px #000;
+  width: 14em;
+  margin-bottom: 15px;
+}
+
+.gudo_download {
+  width: 30%;
+}
+
+.auditorium_guy {
+  width: 26em;
+  margin-bottom: 15px;
+}
+
+/*Send Button. Located in footer*/
+button {
+  padding: 9px 25px;
+  background-color: rgb(71, 71, 71);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease 0s;
+  margin-left: 10px;
+}
+
+/*FOOTER STYLES*/
+/*This Font will render in Footer*/
+.footer {
+  height: 250px;
+  background-color: #67aaec;
+  color: black;
+  position: relative;
+  border: solid 2px #bfff00;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 10px;
+  box-shadow: 2px 2px 12px 1px #000;
+}
+
+.footer .footer-bottom {
+  background-color: #67aaec;
+  height: 30px;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.footer .footer-content {
+  height: 250px;
+  display: flex;
+}
+
+.footer .footer-content .footer-section {
+  flex: 1;
+  padding: 25px;
+}
+
+/*FLEX Container*/
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/*FLEX items*/
+/*This Font will render in the main content*/
+main {
+  flex: 1;
+  font-size: 24px;
+  margin: 20px;
+}
+
+/*NAVBAR*/
+nav {
+  background-color: #67aaec;
+  height: 60px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 2px #bfff00;
+  box-shadow: 2px 2px 15px 1px rgb(36, 36, 36);
+}
+
+aside {
+  padding: 20px;
+  background-color: #67aaec;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 15%;
+  margin: 5px;
+  border: solid 2px #bfff00;
+  box-shadow: 2px 2px 15px 1px #000;
+}
+
+.aside_container {
+  margin: auto;
+  width: 100%;
+}
+
+/*This Font will render in the nav bar*/
+nav ul {
+  width: 100%;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 5px;
+  width: 15%;
+}
+/*This Font will render in the nav bar*/
+nav ul li a {
+  color: black;
+  font-size: 25px;
+  font-family: "Oswald";
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.active,
+a:hover {
+  background: #bfff00;
+  transition: 0.5s;
+  border-radius: 15px;
+}
+
+/*This Font will render in the main*/
+p {
+  font-weight: 600;
+  line-height: 25px;
+}
+
+/*Assignment 4 start*/
+header {
+  margin: 8px;
+  border-radius: 35px;
+}
+
+.body_container {
+  border-radius: 20px;
+  background-color: #f0ffff;
+  height: fit-content;
+  border: solid 2px #bfff00;
+}
+
+/*DarkMode switch CSS*/
+.label {
+  width: 80px;
+  font-family: "Oswald";
+  font-size: 12px;
+  color: black;
+  background-color: #67aaec;
+  border: solid 2px #bfff00;
+  border-radius: 5px;
+  padding: 0px 10px 0px 10px;
+}
+
+body.dark {
+  background-color: black;
+}
+
+body.dark p {
+  color: white;
+}
+
+body.dark main {
+  background-color: rgb(27, 27, 27);
+}
+
+body.dark header {
+  background-color: rgb(27, 27, 27);
+}
+
+body.dark .body_container {
+  background-color: rgb(27, 27, 27);
+}
+/*End DarkMode*/
+
+/*MEDIA QUERIES*/
+
+/*Desktop/laptop*/
+@media screen and (max-width: 1024px) {
+  aside {
+    padding: 10px;
+    font-size: 12px;
+    width: 16%;
+    line-height: 18px;
+  }
+
+  img {
+    padding-top: 3px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .logo {
+    font-size: 10px;
+  }
+
+  .webname {
+    font-size: 50px;
+    font-weight: 800;
+  }
+
+  nav {
+    height: 30px;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li a {
+    font-size: 15px;
+  }
+
+  .item1,
+  .item2,
+  .item3,
+  .item4,
+  .item5,
+  .item6,
+  .item7,
+  .item8 {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .p_article {
+    font-size: 15px;
+  }
+
+  .footer {
+    height: 200px;
+    font-size: 10px;
+  }
+}
+
+/*MOBILE DEVICE*/
+@media screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+
+  h2 {
+    font-size: 10px;
+  }
+  h3 {
+    font-size: 8px;
+  }
+
+  .logo {
+    padding-left: 0;
+    font-size: 6px;
+  }
+
+  .webname {
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+  nav {
+    height: 30px !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li a {
+    font-size: 12px;
+  }
+
+  .item1,
+  .item2,
+  .item3,
+  .item4,
+  .item5,
+  .item6,
+  .item7,
+  .item8 {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .p_article {
+    font-size: 12px;
+  }
+
+  h4 {
+    font-size: 17px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .footer {
+    height: 100px;
+    font-size: 8px;
+  }
+
+  .forum_page {
+    display: none;
+  }
+
+  .footer {
+    height: 150px;
+    position: relative;
+    font-size: 12px;
+    margin: 10px;
+    border: solid 2px #bfff00;
+  }
+
+  .footer .footer-bottom {
+    height: 30px;
+    bottom: 0px;
+    left: 0px;
+    padding-bottom: 10px;
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .footer .footer-content {
+    height: 250px;
+    display: flex;
+  }
+
+  .footer .footer-content .footer-section {
+    flex: 1;
+    padding: 15px;
+  }
+  button {
+    display: none;
+  }
+  form {
+    display: none;
+  }
+  h3 {
+    display: none;
+  }
+  .body_container {
+    border-radius: 40px;
+  }
+
+  .label {
+    width: 8px;
+    font-family: "Oswald";
+    font-size: 8px;
+    color: black;
+    background-color: #67aaec;
+    border: solid 2px #bfff00;
+    border-radius: 8px;
+    padding: 0px 7px 0px 7px;
+  }
+}

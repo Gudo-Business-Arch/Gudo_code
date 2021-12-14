@@ -11,13 +11,18 @@
     <title>Gudo</title>
     
     <script src="compromise.js"></script>
-    <script src="main.js" defer ></script>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="popup.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     
+    <script src="main.js" defer ></script>
+    
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="popup.css">
 </head>
 
 <body>
@@ -28,8 +33,8 @@
             <img class="gudo_logo" src="images/GudoLogo.svg" id="logo">
         </div>
     </header>
+    <!--END  HEADER -->
 
-    <!-- MAIN GRID -->
     <!-- FULLSCREEN JS -->
     <script>
         //For browser compatibility for MS, Mozilla, and Chrome
@@ -68,56 +73,51 @@
             </div>
 
             <!-- SEARCH BAR -->
+            <p align='center'>What can i pull up for you?</p>
             <div class="search">
-                <input type="text" placeholder="Gudo Search..." autocomplete="off" autofocus>
-
-                <div class="talk_btn">🎤</div>
-
-                <div class="search_button">Search</div>
                 
-                <br>
-                <p class="info"></p>        
+                <input type="text" placeholder="Gudo Search..." autocomplete="off" autofocus>
+                <div class="talk_btn">🎤</div>
+                <div class="search_button">Search</div>
+                <br>      
             </div>
+            <!-- END SEARCH BAR -->
+            <!-- where image displays -->
 			<div class="gallery"></div>
 			<div class="next">Next page</div>
         </main>
-        <!-- END OF MAIN GRID -->
+    <!-- END OF MAIN GRID -->
 
         <!-- SIDEBAR NAVIGATION -->
         <section class="side_bar">
             <div class="wrapper">
                 <div class="sidebar">
                     <ul>
-                        <li><a href="/web_pages/home.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="/web_pages/home.html"><i class="fas fa-home"></i>  Home</a></li>
                         <br>
                         <!-- Trigger the Login modal -->
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal"><i class="fas fa-user"></i> Login </a></li>
-
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#LoginModal"><i class="fas fa-user"></i>  Login </a></li>
+                        <br>
                         <!-- Trigger the Login modal -->
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#signupModal"><i class="fas fa-user"></i> Sign Up </a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#signupModal"><i class="fas fa-user"></i>  Sign Up </a></li>
+                        <br>
+                        <li><a href="gudo_website/home.html"><i class="fas fa-question-circle"></i>  Need Help?</a></li>
+                        <br>
+                        <li><a href="#"><i class="fa fa-book"></i> Your Library</a></li>
                         
                             <!-- Once the user logs in this php routes them to welcome page -->
                             <?php
                                 if(isset($_POST['login']))
                                 {
-                                    
-                                     
                                         $username=$_POST["username"];
                                         $userpassword=$_POST["password"];
-
-                                   
-                    
-                                    
                                     include_once("config/db.php");
 
                                     $sql="SELECT UserName, UserEmail, LoginPassword FROM user WHERE (UserName=:Uname || UserEmail=:Uname)";
                         
                                     $query=$dbh->prepare($sql);
-                                  
                                     $query->bindParam(':Uname',$username,PDO::PARAM_STR);
-                                  
                                     $query->execute();
-                                   
                                     $results=$query->fetchAll(PDO::FETCH_OBJ);
                                     if($query->rowCount()>0)
                                     {
@@ -127,17 +127,17 @@
                                             if(password_verify($userpassword,$hashpass))
                                             {
                                                 $_SESSION["USERLOGIN"]=$_POST['username'];
-                                               // header("location:welcome.php");
                                                echo " <script type'text/javascript'> document.location='welcome.php';</script>";
                                             }
                                     }
+                                    //if login is unsuccesful
                                     else
                                     {
                                         echo "wrong password";
                                     }
                                 }
-
                             ?>
+                           <!-- START LOGIN -->
                             <form method="post">
                                 <!-- The Modal for Login -->
                                 <div class="modal" id="LoginModal">
@@ -179,92 +179,94 @@
                                     </div>
                                 </div>
                             </form>
-
+                    </ul>           <!-- LOGIN END -->
         </section>       
         <!-- sign up MODAL -->
         <?php
-        if(isset($_POST["Sign_up"]))
-        {
-          // if the user types in the sign up the values are stored in these variables
-          $UserFullName=$_POST["User_Full_Name"];
-          $UserName=$_POST["User_Name"];
-          $UserEmail=$_POST["User_Email"];
-          $UserMobile_Number=$_POST["User_Mobile_Number"];
-          $UserPassword=$_POST["User_Password"];
+            // SIGNUP START
+            if(isset($_POST["Sign_up"]))
+            {
+            // if the user types in the sign up the values are stored in these variables
+            $UserFullName=$_POST["User_Full_Name"];
+            $UserName=$_POST["User_Name"];
+            $UserEmail=$_POST["User_Email"];
+            $UserMobile_Number=$_POST["User_Mobile_Number"];
+            $UserPassword=$_POST["User_Password"];
+            
+            // Password stuff
+            $options=['cost' => 12,];
+            $HPassword=password_hash($UserPassword,PASSWORD_BCRYPT, $options);
+            
+            include_once"config/db.php";
+            //Query for insertion into the DataBase
+            $sql="INSERT INTO user (fullName,UserName,UserEmail,UserMobileNumber,LoginPassword) VALUES(:fname,:uname,:uemail,:umobile,:upassword)";
         
-          // Password stuff
-          $options=['cost' => 12,];
-          $HPassword=password_hash($UserPassword,PASSWORD_BCRYPT, $options);
-        
-          include_once"config/db.php";
-          //Query for insertion into the DataBase
-          $sql="INSERT INTO user (fullName,UserName,UserEmail,UserMobileNumber,LoginPassword) VALUES(:fname,:uname,:uemail,:umobile,:upassword)";
-    
-          //prepare DB
-          $query=$dbh->prepare($sql);
-        
-          //BIND PARAMETER
-          $query->bindParam(":fname",$UserFullName,PDO::PARAM_STR);
-          $query->bindParam(":uname",$UserName,PDO::PARAM_STR);
-          $query->bindParam(":uemail",$UserEmail,PDO::PARAM_STR);
-          $query->bindParam(":umobile",$UserMobile_Number,PDO::PARAM_STR);
-          $query->bindParam(":upassword",$HPassword,PDO::PARAM_STR);
-        
-          //execute query
-          if($query->execute())
-          {
-            echo "You have successfully signed up";
-          }
-        }
+            //prepare DB
+            $query=$dbh->prepare($sql);
+            
+            //BIND PARAMETER
+            $query->bindParam(":fname",$UserFullName,PDO::PARAM_STR);
+            $query->bindParam(":uname",$UserName,PDO::PARAM_STR);
+            $query->bindParam(":uemail",$UserEmail,PDO::PARAM_STR);
+            $query->bindParam(":umobile",$UserMobile_Number,PDO::PARAM_STR);
+            $query->bindParam(":upassword",$HPassword,PDO::PARAM_STR);
+            
+            //execute query
+            if($query->execute())
+                {
+                    echo "You have successfully signed up";
+                }
+            }
         ?>
             <form method="post">
                 <div id="signupModal" class="modal fade" role="dialog">
+
                     <div class="modal-dialog">
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Sign Up at no Cost</h4>
-                        </div>
-                        <!-- MODAL BODY -->
-                        <div class="modal-body">
+                            <!-- Modal content-->
+                         <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Sign Up at no Cost</h4>
+                                </div>
+                                    <!-- MODAL BODY -->
+                                    <div class="modal-body">
 
-                        <!-- full name -->
-                        <div class="form-group">
-                            <label for="full_name">Name:</label>
-                            <input type="text" class="form-control" id="Full_Name" name="User_Full_Name" required pattern="[a-zA-Z0-9]+" placeholder="Name">
-                        </div>
-                        <!-- user name -->
-                        <div class="form-group">
-                            <label for="user_name">User Name:</label>
-                            <input type="text" class="form-control" name="User_Name" id="user_name" required placeholder="Pick a User name">
-                        </div>
-                        <!-- email -->
-                        <div class="form-group">
-                            <label for="user_email">Email:</label>
-                            <input type="text" class="form-control" name="User_Email" id="user_email" required>
-                        </div>
-                        <!-- mobile -->
-                        <div class="form-group">
-                            <label for="user_mobile">Mobile Number:</label>
-                            <input type="text" class="form-control" name="User_Mobile_Number" id="user_mobile" required>
-                        </div>
-                            <!-- password -->
-                        <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input type="password" name="User_Password" class="form-control" id="pwd" required>
-                        </div>
+                                    <!-- full name -->
+                                    <div class="form-group">
+                                        <label for="full_name">Name:</label>
+                                        <input type="text" class="form-control" id="Full_Name" name="User_Full_Name" required pattern="[a-zA-Z0-9]+" placeholder="Name">
+                                    </div>
+                                    <!-- user name -->
+                                    <div class="form-group">
+                                        <label for="user_name">User Name:</label>
+                                        <input type="text" class="form-control" name="User_Name" id="user_name" required placeholder="Pick a User name">
+                                    </div>
+                                    <!-- email -->
+                                    <div class="form-group">
+                                        <label for="user_email">Email:</label>
+                                        <input type="text" class="form-control" name="User_Email" id="user_email" required>
+                                    </div>
+                                    <!-- mobile -->
+                                    <div class="form-group">
+                                        <label for="user_mobile">Mobile Number:</label>
+                                        <input type="text" class="form-control" name="User_Mobile_Number" id="user_mobile" required>
+                                    </div>
+                                    <!-- password -->
+                                    <div class="form-group">
+                                        <label for="pwd">Password:</label>
+                                        <input type="password" name="User_Password" class="form-control" id="pwd" required>
+                                    </div>
 
-                        
-                        </div>
+                                </div>
 
-                        <div class="modal-footer">
-                            <button type="submit" name="Sign_up" class="btn btn-success" >Sign Up!!</button>
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                <div class="modal-footer">
+                                    <button type="submit" name="Sign_up" class="btn btn-success" >Sign Up!!</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                                <!--END MODAL BODY -->
+                                <!--END Modal content-->
                         </div>
-                    </div>
-
                     </div>
                 </div>
              </form>
@@ -275,6 +277,7 @@
         <section class="description">
             <a href="www.amazon.com">Affiliate link</a>
         </section>
+        <!-- LINK IN DESCRIPTION -->
 
         <!-- FOOTER -->
         <section class="footer">
@@ -289,7 +292,7 @@
                     </div>
                     <div class="footer-section contact-form">
                         <br>
-                        <h3>CONTACT US</h3>
+                        <h3>Contact Us</h3>
                         <br>
                         <form action="layout_one.html" method="post">
                              <input type="email" name="email" class="text-input contact-input" placeholder="Your Email address">
@@ -302,6 +305,7 @@
                 </div>
                     
                 <div class="footer-bottom">
+                    <br>
                             &copy; Gudo | Designed by GWG and Charles 
                  </div>
             </div>
@@ -310,7 +314,7 @@
       
         <!-- LIBRARY -->
         <section class="library">
-            <h2>Your Library</h2>
+            <h2 align="center">Your Library</h2>
 			<div class="library_gallery"></div>
         </section>
         <!--END of LIBRARY -->
