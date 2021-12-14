@@ -17,6 +17,7 @@ const recognition = new SpeechRecognition();
 recognition.onstart = function () {
 	console.log('Gudo is listening');	// If this doesn't pop up, there might be problems.
 	recognizing = true;
+	btn.style.background = "#67aaec";
 }
 
 async function GetNounsSearch(query, pagenum) {
@@ -50,6 +51,7 @@ recognition.onresult = function(event) {
 	GetNounsSearch(query, pagenum);
 	if (recognition.continuous == false) {
 		recognizing = false
+		btn.style.background = "#bfff00"
 	}
 };
 
@@ -57,6 +59,7 @@ btn.addEventListener('click', () => {
 	if (recognizing == true) {
 		recognition.stop();
 		recognizing = false;
+		btn.style.background = "#bfff00";
 	} else {
 	recognition.continuous = false; // Default to being off, to give people a chance to move images to the library, for example.
 	if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement) {
