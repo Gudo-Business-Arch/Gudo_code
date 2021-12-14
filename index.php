@@ -68,7 +68,7 @@
 				  <i class="fas fa-microphone-alt" id="listening_mic"> </i>
 			</div>
 			<!-- SEARCH BAR -->
-			<p align='center'>What can i pull up for you?</p>
+			<p align='center'>What can I pull up for you?</p>
 			<div class="search">
 				
 				<input type="text" placeholder="Gudo Search..." autocomplete="off" autofocus>
