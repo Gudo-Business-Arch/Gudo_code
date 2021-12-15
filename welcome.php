@@ -71,17 +71,14 @@ else{
             <div class="mic_container">
                   <i class="fas fa-microphone-alt" id="listening_mic"> </i>
             </div>
-            <h1>WELCOME</h1>
+            <h1>Welcome</h1>
             <!-- SEARCH BAR -->
+            <p align='center'>What can I pull up for you?</p>
         <div class="search">
             <input type="text" placeholder="Gudo Search..." autocomplete="off" autofocus>
-
             <div class="talk_btn">🎤</div>
-
             <div class="search_button">Search</div>
-            
-            <br>
-            <p class="info"></p>        
+            <br>       
         </div>
 			<div class="gallery"></div>
 			<div class="next">Next page</div>
@@ -94,8 +91,9 @@ else{
                 <div class="sidebar">
                     
                     <ul>
-                        <li><a href="/web_pages/home.html"><i class="fas fa-home"></i> Home</a></li>
-                        <br>
+
+                        <li><a href="gudo_website/home.html"><i class="fas fa-question-circle"></i>  Need Help?</a></li>
+						<br>
 
                         <!-- Trigger the Logout -->
                         <li><a href="logout.php"><i class="fas fa-user"></i> Log Out </a></li>
@@ -136,9 +134,7 @@ else{
                                 </div>
                             </form>
                         <br>
-                        <li><a href="#"><i class="fas fa-address-card"></i> About</a></li>
-                        <br>
-                        <li><a href="#"><i class="fa fa-book"></i> Saves</a></li>
+                        <li><a href="#"><i class="fa fa-book"></i> Your Library</a></li>
                     </ul> 
                 </div>
             </div>
@@ -146,39 +142,40 @@ else{
 
         <!-- LINK IN DESCRIPTION -->
         <section class="description">
-            <a href="www.amazon.com">Affiliate link</a>
+            <p>NOTE: Gudo is in its early stages of development. </p>
+            <hr>
+            <p>Gudo can either be used with voice input or text input. Select the microphone icon to start a listening session (<strong>be sure to enable your microphone in your browser!</strong>) then simply state what gudo should pull up for you. </p>
         </section>
 
         <!-- FOOTER -->
-        <section class="footer">
-            <div class="footer">
-                <div class="footer-content">
-                    <div class="footer-section about">
-                        <h2>Gudo inc.</h2>
-                        <p>Visual Assistant</p>
-                        <div class="contact">
-                            <span><i class="fas fa-envelope"> &nbsp; info@email.com</i></span>
-                        </div>
-                    </div>
-                    <div class="footer-section contact-form">
-                        <br>
-                        <h3>CONTACT US</h3>
-                        <br>
-                        <form action="layout_one.html" method="post">
-                             <input type="email" name="email" class="text-input contact-input" placeholder="Your Email address">
-
-                             <input name="message" class="text-input contact-input" placeholder="Your message"></input>
-
-                            <button type="submit" class="btn btn-big"></button>
-                        </form>
-                     </div>
-                </div>
-                    
-                <div class="footer-bottom">
-                            &copy; Gudo | Designed by GWG and Charles 
-                 </div>
-            </div>
-        </section>
+		<section class="footer">
+			<div class="footer">
+				<div class="footer-content">
+					<div class="footer-section about">
+						<h2>Gudo inc.</h2>
+						<p>The Visual Assistant</p>
+						<div class="contact">
+							<h3>Contact Us</h3>
+							<span><i class="fas fa-envelope"> &nbsp; gudoteam@gudoassistant.com</i></span>
+						</div>
+					</div>
+					<div class="footer-section contact-form">
+						<br>
+						<!-- form for message submissions (DOESNT WORK) -->
+						<!-- <form action="layout_one.html" method="post">
+							 <input type="email" name="email" class="text-input contact-input" placeholder="Your Email address">
+							 <input name="message" class="text-input contact-input" placeholder="Your message"></input>
+							<button type="submit" class="btn btn-big"></button>
+						</form> -->
+					 </div>
+				</div>
+					
+				<div class="footer-bottom">
+							&copy; Gudo | Designed by GWG and Charles 
+				 </div>
+			</div>
+		</section>
+		<!--END of FOOTER -->
 
     
         <!-- LIBRARY -->

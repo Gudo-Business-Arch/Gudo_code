@@ -238,3 +238,7 @@ a {
 a:hover {
   color: #bfff00;
 }
+
+.modal-content {
+  color: black;
+}
