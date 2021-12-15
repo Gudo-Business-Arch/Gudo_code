@@ -256,7 +256,7 @@
 		  <!--END  SIGN UP MODAL -->
 		<!-- LINK IN DESCRIPTION -->
 		<section class="description">
-			<p>Ad-Space For Rent, Here.</p>
+			<p>Ad-Space or For Rent, Here.</p>
 		</section>
 		<!-- LINK IN DESCRIPTION -->
 		<!-- FOOTER -->
